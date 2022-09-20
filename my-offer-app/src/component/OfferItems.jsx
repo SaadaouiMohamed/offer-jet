@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import DiscreptionModal from "./DiscreptionModal";
+import ModaleFromScratch from "./ModaleFromScratch";
 export default function OfferItems(props) {
   dayjs.extend(relativeTime);
 
@@ -12,7 +13,7 @@ export default function OfferItems(props) {
   return (
     <div id="offerItem">
       <p id="title">{props.item.title}</p>
-      <div className="grid grid-cols-4 gap-3">
+      <div className="lg:grid lg:grid-cols-4 lg:gap-3 sm:grid-cols-1 sm:gap-4">
         <div>
           <p>{props.item.company_name}</p>
         </div>
@@ -30,10 +31,11 @@ export default function OfferItems(props) {
         </div>
       </div>
       <i className="fa-solid fa-circle-arrow-right"></i>
-      <button onClick={handleShow} className="text-[#b7906a]">
+      <button onClick={() =>handleShow()} className="text-[#b7906a]" id="showBtn">
         MORE DTAILS
       </button>
-      <DiscreptionModal open={open} setOpen={setOpen} item={props.item} />
+      {/*<DiscreptionModal open={open} setOpen={setOpen} item={props.item} />*/}
+  <ModaleFromScratch open = {open} setOpen ={setOpen} item = {props.item}/>
     </div>
   );
 }

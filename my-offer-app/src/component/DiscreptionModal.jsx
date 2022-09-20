@@ -1,4 +1,4 @@
-import { Box, Modal, Typography } from '@mui/material'
+import { Box, Modal, Portal, Typography } from '@mui/material'
 import React,{useState} from 'react'
 
 export default function DiscreptionModal(props) {
@@ -12,7 +12,7 @@ export default function DiscreptionModal(props) {
   aria-labelledby="modal-modal-title"
   aria-describedby="modal-modal-description"
 >
-  <Box className='bg-[#36383d] relative w-[400px] m-auto p-4 mt-8'>
+  <Box className='bg-[#36383d] relative w-[400px] m-auto p-4 mt-8 pb-20 '>
     <Typography id="modal-modal-title" variant="h6" component="h2" className='text-[#bd976f]'>
      {props.item.title}
     </Typography>
@@ -24,7 +24,7 @@ export default function DiscreptionModal(props) {
       {props.item.translations.en.sharing_description
       }
     </Typography>
-    <button><i class="fa-light fa-circle-xmark"></i></button>
+    <button onClick={() => handleClose()} id='closeModale'><i className="fa-sharp fa-solid fa-xmark xmark"></i></button>
   </Box>
 </Modal>
     </div>

@@ -20,5 +20,27 @@ h2{
  }
 
  #outlined-password-input{
-    border-color: #bd9973;
+    @apply px-20 py-5
+ }
+
+ #demo-radio-buttons-group-label{
+   @apply text-[#bd9973]
+ }
+
+ .xmark{
+   @apply text-xl text-orange-600
+ }
+
+
+ .closeModale{
+   @apply border-solid border-2 border-orange-600 rounded-full px-3 py-1 absolute top-1 right-1
+ }
+
+ .backdrop{
+   @apply fixed w-[100%] h-[100vh] z-20
+ }
+
+
+ .modal{
+   @apply fixed top-[20vh] left-[20%] w-[50%] bg-slate-500 p-10 right-[50%]
  }
