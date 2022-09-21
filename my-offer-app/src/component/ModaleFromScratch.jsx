@@ -6,7 +6,7 @@ export default function ModaleFromScratch({ open, setOpen, item }) {
 
   const modal = useRef(null);
 
-  const btn = document.querySelector("#showBtn");
+  
 
   useEffect(() => {
     function handler(e) {
@@ -24,6 +24,24 @@ export default function ModaleFromScratch({ open, setOpen, item }) {
     };
   }, [modal]);
 
+
+  useEffect(() => {
+   function disableScroll(){
+      if(open === true){
+        document.body.style.overflow = 'hidden'
+        console.log('hide')
+      }
+    }
+    disableScroll()
+    return () => {
+      document.body.style.overflow = 'auto'
+      console.log('show')
+    }
+      
+    
+  },[open])
+
+
   if (!open) return null;
 
   return (
@@ -36,7 +54,7 @@ export default function ModaleFromScratch({ open, setOpen, item }) {
           </p>
           <p>{item.translations.en.sharing_description}</p>
           <button className="closeModale" onClick={() => handleClose()}>
-            <i className="fa-regular fa-xmark xmark"></i>
+            <i className="fa-solid fa-xmark xmark"></i>
           </button>
         </div>,
         document.body
